@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		D88EF2ED2CE224CE002B9ED5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D88EF2CE2CE224CC002B9ED5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D88EF2D52CE224CC002B9ED5;
+			remoteInfo = BookTrackerLite;
+		};
+		D88EF2F72CE224CE002B9ED5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D88EF2CE2CE224CC002B9ED5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D88EF2D52CE224CC002B9ED5;
+			remoteInfo = BookTrackerLite;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D88EF2D62CE224CC002B9ED5 /* BookTrackerLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookTrackerLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D88EF2EC2CE224CE002B9ED5 /* BookTrackerLiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookTrackerLiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D88EF2F62CE224CE002B9ED5 /* BookTrackerLiteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookTrackerLiteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D88EF2FE2CE224CE002B9ED5 /* Exceptions for "BookTrackerLite" folder in "BookTrackerLite" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Other/Info.plist,
+			);
+			target = D88EF2D52CE224CC002B9ED5 /* BookTrackerLite */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D88EF2D82CE224CC002B9ED5 /* BookTrackerLite */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D88EF2FE2CE224CE002B9ED5 /* Exceptions for "BookTrackerLite" folder in "BookTrackerLite" target */,
+			);
+			path = BookTrackerLite;
+			sourceTree = "<group>";
+		};
+		D88EF2EF2CE224CE002B9ED5 /* BookTrackerLiteTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BookTrackerLiteTests;
+			sourceTree = "<group>";
+		};
+		D88EF2F92CE224CE002B9ED5 /* BookTrackerLiteUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BookTrackerLiteUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D88EF2D32CE224CC002B9ED5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D88EF2E92CE224CE002B9ED5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D88EF2F32CE224CE002B9ED5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D88EF2CD2CE224CC002B9ED5 = {
+			isa = PBXGroup;
+			children = (
+				D88EF2D82CE224CC002B9ED5 /* BookTrackerLite */,
+				D88EF2EF2CE224CE002B9ED5 /* BookTrackerLiteTests */,
+				D88EF2F92CE224CE002B9ED5 /* BookTrackerLiteUITests */,
+				D88EF2D72CE224CC002B9ED5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D88EF2D72CE224CC002B9ED5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D88EF2D62CE224CC002B9ED5 /* BookTrackerLite.app */,
+				D88EF2EC2CE224CE002B9ED5 /* BookTrackerLiteTests.xctest */,
+				D88EF2F62CE224CE002B9ED5 /* BookTrackerLiteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D88EF2D52CE224CC002B9ED5 /* BookTrackerLite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D88EF2FF2CE224CE002B9ED5 /* Build configuration list for PBXNativeTarget "BookTrackerLite" */;
+			buildPhases = (
+				D88EF2D22CE224CC002B9ED5 /* Sources */,
+				D88EF2D32CE224CC002B9ED5 /* Frameworks */,
+				D88EF2D42CE224CC002B9ED5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D88EF2D82CE224CC002B9ED5 /* BookTrackerLite */,
+			);
+			name = BookTrackerLite;
+			packageProductDependencies = (
+			);
+			productName = BookTrackerLite;
+			productReference = D88EF2D62CE224CC002B9ED5 /* BookTrackerLite.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D88EF2EB2CE224CE002B9ED5 /* BookTrackerLiteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D88EF3042CE224CE002B9ED5 /* Build configuration list for PBXNativeTarget "BookTrackerLiteTests" */;
+			buildPhases = (
+				D88EF2E82CE224CE002B9ED5 /* Sources */,
+				D88EF2E92CE224CE002B9ED5 /* Frameworks */,
+				D88EF2EA2CE224CE002B9ED5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D88EF2EE2CE224CE002B9ED5 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D88EF2EF2CE224CE002B9ED5 /* BookTrackerLiteTests */,
+			);
+			name = BookTrackerLiteTests;
+			packageProductDependencies = (
+			);
+			productName = BookTrackerLiteTests;
+			productReference = D88EF2EC2CE224CE002B9ED5 /* BookTrackerLiteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D88EF2F52CE224CE002B9ED5 /* BookTrackerLiteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D88EF3072CE224CE002B9ED5 /* Build configuration list for PBXNativeTarget "BookTrackerLiteUITests" */;
+			buildPhases = (
+				D88EF2F22CE224CE002B9ED5 /* Sources */,
+				D88EF2F32CE224CE002B9ED5 /* Frameworks */,
+				D88EF2F42CE224CE002B9ED5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D88EF2F82CE224CE002B9ED5 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D88EF2F92CE224CE002B9ED5 /* BookTrackerLiteUITests */,
+			);
+			name = BookTrackerLiteUITests;
+			packageProductDependencies = (
+			);
+			productName = BookTrackerLiteUITests;
+			productReference = D88EF2F62CE224CE002B9ED5 /* BookTrackerLiteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D88EF2CE2CE224CC002B9ED5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					D88EF2D52CE224CC002B9ED5 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					D88EF2EB2CE224CE002B9ED5 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = D88EF2D52CE224CC002B9ED5;
+					};
+					D88EF2F52CE224CE002B9ED5 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = D88EF2D52CE224CC002B9ED5;
+					};
+				};
+			};
+			buildConfigurationList = D88EF2D12CE224CC002B9ED5 /* Build configuration list for PBXProject "BookTrackerLite" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D88EF2CD2CE224CC002B9ED5;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D88EF2D72CE224CC002B9ED5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D88EF2D52CE224CC002B9ED5 /* BookTrackerLite */,
+				D88EF2EB2CE224CE002B9ED5 /* BookTrackerLiteTests */,
+				D88EF2F52CE224CE002B9ED5 /* BookTrackerLiteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D88EF2D42CE224CC002B9ED5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D88EF2EA2CE224CE002B9ED5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D88EF2F42CE224CE002B9ED5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D88EF2D22CE224CC002B9ED5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D88EF2E82CE224CE002B9ED5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D88EF2F22CE224CE002B9ED5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D88EF2EE2CE224CE002B9ED5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D88EF2D52CE224CC002B9ED5 /* BookTrackerLite */;
+			targetProxy = D88EF2ED2CE224CE002B9ED5 /* PBXContainerItemProxy */;
+		};
+		D88EF2F82CE224CE002B9ED5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D88EF2D52CE224CC002B9ED5 /* BookTrackerLite */;
+			targetProxy = D88EF2F72CE224CE002B9ED5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D88EF3002CE224CE002B9ED5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DB3E36CSLR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BookTrackerLite/Other/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.olhasalii.BookTrackerLite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D88EF3012CE224CE002B9ED5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DB3E36CSLR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BookTrackerLite/Other/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.olhasalii.BookTrackerLite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D88EF3022CE224CE002B9ED5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D88EF3032CE224CE002B9ED5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D88EF3052CE224CE002B9ED5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DB3E36CSLR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.olhasalii.BookTrackerLiteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "IS_TESTING DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BookTrackerLite.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BookTrackerLite";
+			};
+			name = Debug;
+		};
+		D88EF3062CE224CE002B9ED5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DB3E36CSLR;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.olhasalii.BookTrackerLiteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BookTrackerLite.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BookTrackerLite";
+			};
+			name = Release;
+		};
+		D88EF3082CE224CE002B9ED5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DB3E36CSLR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.olhasalii.BookTrackerLiteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BookTrackerLite;
+			};
+			name = Debug;
+		};
+		D88EF3092CE224CE002B9ED5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DB3E36CSLR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.olhasalii.BookTrackerLiteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BookTrackerLite;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D88EF2D12CE224CC002B9ED5 /* Build configuration list for PBXProject "BookTrackerLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D88EF3022CE224CE002B9ED5 /* Debug */,
+				D88EF3032CE224CE002B9ED5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D88EF2FF2CE224CE002B9ED5 /* Build configuration list for PBXNativeTarget "BookTrackerLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D88EF3002CE224CE002B9ED5 /* Debug */,
+				D88EF3012CE224CE002B9ED5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D88EF3042CE224CE002B9ED5 /* Build configuration list for PBXNativeTarget "BookTrackerLiteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D88EF3052CE224CE002B9ED5 /* Debug */,
+				D88EF3062CE224CE002B9ED5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D88EF3072CE224CE002B9ED5 /* Build configuration list for PBXNativeTarget "BookTrackerLiteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D88EF3082CE224CE002B9ED5 /* Debug */,
+				D88EF3092CE224CE002B9ED5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D88EF2CE2CE224CC002B9ED5 /* Project object */;
+}
