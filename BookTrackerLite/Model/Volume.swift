@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Volume: Codable {
+struct Volume: Codable, Equatable {
     let title: String
     let subtitle: String?
     let authors: [String]?
@@ -18,6 +18,19 @@ struct Volume: Codable {
     let mainCategory: String?
     let averageRating: Double?
     let imageLinks: ImageLinks?
+    
+    static func == (lhs: Volume, rhs: Volume) -> Bool {
+        return lhs.title == rhs.title &&
+               lhs.subtitle == rhs.subtitle &&
+               lhs.authors == rhs.authors &&
+               lhs.publisher == rhs.publisher &&
+               lhs.publishedDate == rhs.publishedDate &&
+               lhs.description == rhs.description &&
+               lhs.pageCount == rhs.pageCount &&
+               lhs.mainCategory == rhs.mainCategory &&
+               lhs.averageRating == rhs.averageRating &&
+               lhs.imageLinks == rhs.imageLinks
+    }
 }
 
 struct VolumeResource: Codable {

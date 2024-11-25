@@ -22,8 +22,8 @@ class BookListViewModel {
     private var debounceTimer: DispatchWorkItem?
     private weak var delegate: BookListViewModelDelegate?
     
-    init(bookService: BookService, delegate: BookListViewModelDelegate?) {
-        self.bookService = bookService
+    init(delegate: BookListViewModelDelegate?) {
+        self.bookService = resolve(BookService.self)
         self.delegate = delegate
     }
     
@@ -74,7 +74,7 @@ class BookListViewModel {
                 self.totalItems = volumes.totalItems
                 self.delegate?.didBooksUpdate()
             case .failure(let error):
-                self.delegate?.didErrorOccur(error: error.localizedDescription)
+                self.delegate?.didErrorOccur(error: error.detailedDescription)
             }
         }
     }

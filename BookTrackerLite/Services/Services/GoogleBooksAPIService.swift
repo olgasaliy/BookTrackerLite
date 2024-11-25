@@ -22,19 +22,13 @@ class GoogleBooksAPIService: BookService, ImageCacher {
         }
     }
     
-    private var networkingLayer: NetworkingLayer
-    
-    init(networkingLayer: NetworkingLayer) {
-        self.networkingLayer = networkingLayer
-    }
-    
     func fetchVolumes(configuration: VolumesFetchConfiguration, completion: @escaping (Result<VolumesFetchResponse, Error>) -> Void) {
         guard let url = createURL(with: "volumes", queryItems: configuration.asQueryItems()) else {
             completion(.failure(URLError(.badURL)))
             return
         }
         
-        networkingLayer.fetchData(from: url, completion: completion)
+        networkLayer.fetchData(from: url, completion: completion)
     }
     
     func fetchVolumeDetails(id: String, completion: @escaping (Result<VolumeResource, Error>) -> Void) {
@@ -43,7 +37,7 @@ class GoogleBooksAPIService: BookService, ImageCacher {
             return
         }
         
-        networkingLayer.fetchData(from: url, completion: completion)
+        networkLayer.fetchData(from: url, completion: completion)
     }
     
     func getImage(from imageLinks: ImageLinks, preferredSize: ImageLinks.Size, completion: @escaping (Result<UIImage, any Error>) -> Void) {
@@ -65,7 +59,7 @@ class GoogleBooksAPIService: BookService, ImageCacher {
         if let cachedImage = getCachedImage(for: url.absoluteString) {
             completion(.success(cachedImage))
         } else {
-            networkingLayer.fetchData(from: url) { (result: Result<Data, Error>) in
+            networkLayer.fetchData(from: url) { (result: Result<Data, Error>) in
                 switch result {
                 case .success(let data):
                     if let image = UIImage(data: data) {

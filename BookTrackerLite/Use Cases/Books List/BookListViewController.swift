@@ -11,6 +11,7 @@ class BookListViewController: UIViewController {
     
     private var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.accessibilityIdentifier = "bookListTableView"
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UINib(nibName: String(describing: BookListTableViewCell.self),
                                  bundle: nil),
@@ -68,7 +69,7 @@ extension BookListViewController: BookListViewModelDelegate {
     }
     
     func didErrorOccur(error: String) {
-        print(error)
+        showErrorAlert(message: error)
     }
     
 }

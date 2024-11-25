@@ -9,7 +9,15 @@ import Foundation
 import UIKit
 
 protocol BookService {
+    var networkLayer: LoaderProtocol { get }
+    
     func fetchVolumes(configuration: VolumesFetchConfiguration, completion: @escaping (Result<VolumesFetchResponse, Error>) -> Void)
     func fetchVolumeDetails(id: String, completion: @escaping (Result<VolumeResource, Error>) -> Void)
     func getImage(from imageLinks: ImageLinks, preferredSize: ImageLinks.Size, completion: @escaping (Result<UIImage, any Error>) -> Void)
+}
+
+extension BookService {
+    var networkLayer: LoaderProtocol {
+        resolve(LoaderProtocol.self)
+    }
 }

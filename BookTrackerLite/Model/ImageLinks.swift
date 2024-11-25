@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ImageLinks: Codable {
+struct ImageLinks: Codable, Equatable {
     private var urls: [Size: String]
     
     enum Size: String, CodingKey, CaseIterable {
@@ -42,20 +42,21 @@ struct ImageLinks: Codable {
             return url
         }
         
-        var url: String? = nil
-        var sizes = Size.allCases
-        var currentIndex = sizes.firstIndex(of: size)!
-        var lIndex = currentIndex
-        var rIndex = currentIndex
-        let indexesAreInsideOfBounds = lIndex >= 0 && rIndex < sizes.count
+        let sizes = Size.allCases
+        let currentIndex = sizes.firstIndex(of: size)!
         
-        repeat {
-            lIndex -= 1
-            rIndex += 1
-            
-            url = urls[sizes[lIndex]] ?? urls[sizes[rIndex]]
-        } while indexesAreInsideOfBounds && url == nil
-        return url
+        for offset in 1...sizes.count {
+            if currentIndex - offset >= 0,
+               let url = urls[sizes[currentIndex - offset]] {
+                return url
+            }
+            if currentIndex + offset < sizes.count,
+               let url = urls[sizes[currentIndex + offset]] {
+                return url
+            }
+        }
+        
+        return nil
     }
     
 }

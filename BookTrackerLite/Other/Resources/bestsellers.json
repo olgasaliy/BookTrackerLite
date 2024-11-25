@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "volumeInfo": {
+        "title": "Bestseller1",
+        "authors": ["Author1"],
+        "publisher": "Publisher1"
+      },
+      "id": "1"
+    },
+    {
+      "volumeInfo": {
+        "title": "Bestseller2",
+        "authors": ["Author2"],
+        "publisher": "Publisher2"
+      },
+      "id": "2"
+    }
+  ],
+  "totalItems": 2
+}

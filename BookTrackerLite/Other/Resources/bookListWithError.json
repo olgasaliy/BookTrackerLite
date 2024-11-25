@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "volume": {
+        "title": "Book1",
+        "authors": ["Author1"],
+        "publisher": "Publisher1"
+      },
+      "id": "3"
+    },
+    {
+      "volumeInfo": {
+        "title": "Book2",
+        "authors": ["Author2"],
+        "publisher": "Publisher2"
+      },
+      "id": "4"
+    },
+    {
+      "volumeInfo": {
+        "title": "Book3",
+        "authors": ["Author3"],
+        "publisher": "Publisher3"
+      },
+      "id": "5"
+    }
+  ],
+  "totalItems": 3
+}

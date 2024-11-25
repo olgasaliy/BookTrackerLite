@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NetworkingLayer {
+class NetworkingLayer: LoaderProtocol {
     private let urlSession: URLSessionProtocol
     
     init(urlSession: URLSessionProtocol = URLSession.shared) {

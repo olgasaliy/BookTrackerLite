@@ -10,18 +10,19 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
+                
         let window = UIWindow(windowScene: windowScene)
+        
+        setupDependencies()
         // TODO: move to navigation
         let initialVC = BookListViewController()
-        let bookService = GoogleBooksAPIService(networkingLayer: NetworkingLayer())
-        initialVC.viewModel = BookListViewModel(bookService: bookService, delegate: initialVC)
+        initialVC.viewModel = BookListViewModel(delegate: initialVC)
         window.rootViewController = UINavigationController(rootViewController: initialVC)
         window.makeKeyAndVisible()
         self.window = window
@@ -55,6 +56,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    private func setupDependencies() {
+        var networkLayer: LoaderProtocol
+        var bookService: BookService
+        
+        let isUITest = ProcessInfo.processInfo.environment["UITest"] == "true"
+        if isUITest {
+            networkLayer = JSONLoader()
+            bookService = LocalBookServiceStub()
+        } else {
+            networkLayer = NetworkingLayer()
+            bookService = GoogleBooksAPIService()
+        }
+        
+        DependencyManager.shared.register(networkLayer, for: LoaderProtocol.self)
+        DependencyManager.shared.register(bookService, for: BookService.self)
+    }
 
 }
 

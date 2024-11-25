@@ -10,6 +10,13 @@ import XCTest
 
 final class GoogleBooksAPIServiceTests: XCTestCase {
     
+    var networkingLayerStub = NetworkingLayerStub()
+    
+    override func setUpWithError() throws {
+        networkingLayerStub = NetworkingLayerStub()
+        DependencyManager.shared.register(networkingLayerStub, for: LoaderProtocol.self)
+    }
+    
     func testFetchVolumes_success() throws {
         let title = "Test Book"
         let subtitle = "Test subtitle"
@@ -22,9 +29,8 @@ final class GoogleBooksAPIServiceTests: XCTestCase {
         )
         let encodedData = try! JSONEncoder().encode(volumes)
         
-        let networkingLayerStub = NetworkingLayerStub()
         networkingLayerStub.result = .success(encodedData)
-        let service = GoogleBooksAPIService(networkingLayer: networkingLayerStub)
+        let service = GoogleBooksAPIService()
         
         let expectation = XCTestExpectation(description: "Completion handler invoked")
         service.fetchVolumes(configuration: VolumesFetchConfiguration(searchQuery: "q")) { result in
@@ -50,9 +56,8 @@ final class GoogleBooksAPIServiceTests: XCTestCase {
         let volumes = [VolumeResource(volumeInfo: Volume(title: title, subtitle: subtitle, authors: nil, publisher: nil, publishedDate: nil, description: nil, pageCount: nil, mainCategory: nil, averageRating: nil, imageLinks: nil), id: id)]
         let encodedData = try! JSONEncoder().encode(volumes)
         
-        let networkingLayerStub = NetworkingLayerStub()
         networkingLayerStub.result = .success(encodedData)
-        let service = GoogleBooksAPIService(networkingLayer: networkingLayerStub)
+        let service = GoogleBooksAPIService()
         
         let expectation = XCTestExpectation(description: "Completion handler invoked")
         service.fetchVolumes(configuration: VolumesFetchConfiguration(searchQuery: "q")) { result in
@@ -78,9 +83,8 @@ final class GoogleBooksAPIServiceTests: XCTestCase {
         let volume = VolumeResource(volumeInfo: Volume(title: title, subtitle: subtitle, authors: nil, publisher: nil, publishedDate: nil, description: nil, pageCount: nil, mainCategory: nil, averageRating: nil, imageLinks: nil), id: id)
         let encodedData = try! JSONEncoder().encode(volume)
         
-        let networkingLayerStub = NetworkingLayerStub()
         networkingLayerStub.result = .success(encodedData)
-        let service = GoogleBooksAPIService(networkingLayer: networkingLayerStub)
+        let service = GoogleBooksAPIService()
         
         let expectation = XCTestExpectation(description: "Completion handler invoked")
         service.fetchVolumeDetails(id: id) {result in
@@ -105,9 +109,8 @@ final class GoogleBooksAPIServiceTests: XCTestCase {
         let volume = Volume(title: title, subtitle: subtitle, authors: nil, publisher: nil, publishedDate: nil, description: nil, pageCount: nil, mainCategory: nil, averageRating: nil, imageLinks: nil)
         let encodedData = try! JSONEncoder().encode(volume)
         
-        let networkingLayerStub = NetworkingLayerStub()
         networkingLayerStub.result = .success(encodedData)
-        let service = GoogleBooksAPIService(networkingLayer: networkingLayerStub)
+        let service = GoogleBooksAPIService()
         
         let expectation = XCTestExpectation(description: "Completion handler invoked")
         service.fetchVolumeDetails(id: id) {result in
@@ -127,23 +130,4 @@ final class GoogleBooksAPIServiceTests: XCTestCase {
 
 }
 
-class NetworkingLayerStub: NetworkingLayer {
-    var result: Result<Data, Error>? = nil
-    
-    override func fetchData<T>(from url: URL, completion: @escaping (Result<T, any Error>) -> Void) where T : Codable {
-        switch result {
-        case .success(let data):
-            if let decodedData = try? JSONDecoder().decode(T.self, from: data) {
-                completion(.success(decodedData))
-            } else {
-                completion(.failure(URLError(.cannotDecodeRawData)))
-            }
-        case .failure(let error):
-            completion(.failure(error))
-        default:
-            completion(.failure(URLError(.unknown)))
-        }
-        
-    }
-}
 
