@@ -12,7 +12,7 @@ import UIKit
 class BookServiceStub: BookService {
     
     var volumesFetchResponse: VolumesFetchResponse?
-    var bestsellersVolumesFetchResponse: VolumesFetchResponse?
+    var randomVolumesFetchResponse: VolumesFetchResponse?
     var error: Error?
     
     func fetchVolumes(configuration: VolumesFetchConfiguration, completion: @escaping (Result<VolumesFetchResponse, any Error>) -> Void) {
@@ -22,8 +22,8 @@ class BookServiceStub: BookService {
         }
         
         if configuration.searchQuery == "bestseller" {
-            if let bestsellersVolumesFetchResponse = bestsellersVolumesFetchResponse {
-                completion(.success(bestsellersVolumesFetchResponse))
+            if let randomVolumesFetchResponse {
+                completion(.success(randomVolumesFetchResponse))
             } else {
                 completion(.failure(URLError(.unknown)))
             }
@@ -52,11 +52,11 @@ extension BookServiceStub {
         self.volumesFetchResponse = volumesFetchResponse
     }
     
-    func mockServiceWithBestsellers() {
+    func mockServiceWithRandomBooks() {
         let book1 = VolumeResource(volumeInfo: Volume(title: "Bestseller1", subtitle: nil, authors: nil, publisher: nil, publishedDate: nil, description: nil, pageCount: nil, mainCategory: nil, averageRating: nil, imageLinks: nil), id: "1")
         let book2 = VolumeResource(volumeInfo: Volume(title: "Bestseller2", subtitle: nil, authors: nil, publisher: nil, publishedDate: nil, description: nil, pageCount: nil, mainCategory: nil, averageRating: nil, imageLinks: nil), id: "2")
         let books = [book1, book2]
         let volumesFetchResponse = VolumesFetchResponse(items: books, totalItems: 2)
-        bestsellersVolumesFetchResponse = volumesFetchResponse
+        randomVolumesFetchResponse = volumesFetchResponse
     }
 }

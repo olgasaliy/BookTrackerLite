@@ -10,20 +10,25 @@ class DependencyManager {
     static let shared = DependencyManager()
 
     private var services: [String: Any] = [:]
+    private let queue = DispatchQueue(label: "com.dependencymanager.queue", attributes: .concurrent)
 
     private init() {}
-
+    
     func register<Service>(_ service: Service, for type: Service.Type) {
         let key = "\(type)"
-        services[key] = service
+        queue.async(flags: .barrier) { [weak self] in
+            self?.services[key] = service
+        }
     }
-
+    
     func resolve<Service>(_ type: Service.Type) -> Service {
         let key = "\(type)"
-        guard let service = services[key] as? Service else {
-            fatalError("No registered service for type \(type)")
+        return queue.sync {
+            guard let service = services[key] as? Service else {
+                fatalError("No registered service for type \(type)")
+            }
+            return service
         }
-        return service
     }
 }
 

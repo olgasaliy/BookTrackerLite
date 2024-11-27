@@ -39,6 +39,6 @@ struct VolumeResource: Codable {
 }
 
 struct VolumesFetchResponse: Codable {
-    let items: [VolumeResource]
+    let items: [VolumeResource]?
     let totalItems: Int
 }

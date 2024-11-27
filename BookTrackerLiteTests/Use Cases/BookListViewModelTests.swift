@@ -42,7 +42,7 @@ final class BookListViewModelTests: XCTestCase {
             return
         }
         
-        guard let firstBook = bookService.volumesFetchResponse?.items.first?.volumeInfo else {
+        guard let firstBook = bookService.volumesFetchResponse?.items?.first?.volumeInfo else {
             XCTFail("No first book in test data")
             return
         }
@@ -57,7 +57,7 @@ final class BookListViewModelTests: XCTestCase {
     }
     
     func testGetBooks_withNoSearchText_success() throws {
-        bookService.mockServiceWithBestsellers()
+        bookService.mockServiceWithRandomBooks()
         
         let expectation = XCTestExpectation(description: "Completion handler invoked")
         viewModel.getBooks(with: "")
@@ -114,8 +114,8 @@ final class BookListViewModelTests: XCTestCase {
         XCTAssertTrue(delegate.didErrorOccurWasCalled)
     }
     
-    func testGetBestsellers_success() throws {
-        bookService.mockServiceWithBestsellers()
+    func testGetRandomBooks_success() throws {
+        bookService.mockServiceWithRandomBooks()
         
         let expectation = XCTestExpectation(description: "Completion handler invoked")
         viewModel.getBooks(with: "")
@@ -129,7 +129,7 @@ final class BookListViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.booksCount, 2)
     }
     
-    func testGetBestsellers_failure() throws {
+    func testGetRandomBooks_failure() throws {
         bookService.error = URLError(.networkConnectionLost)
         
         let expectation = XCTestExpectation(description: "Completion handler invoked")

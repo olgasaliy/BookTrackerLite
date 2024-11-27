@@ -17,8 +17,14 @@ class BookListViewModel {
     let bookService: BookService
     var booksCount: Int { books.count }
     
+    private(set) var filter: FilterBookList? {
+        didSet {
+            applyFilter()
+        }
+    }
     private var books: [Volume] = []
     private var totalItems: Int = 0
+    private var lastSearchText: String?
     private var debounceTimer: DispatchWorkItem?
     private weak var delegate: BookListViewModelDelegate?
     
@@ -31,15 +37,10 @@ class BookListViewModel {
         return books[safe: index]
     }
     
-    func getBestsellers() {
-        let configuration = VolumesFetchConfiguration(searchQuery: "bestseller",
-                                                      limit: 15)
-        fetchBooks(with: configuration)
-    }
-    
     func getBooks(with searchText: String) {
+        lastSearchText = searchText
         guard !searchText.isEmpty else {
-            getBestsellers()
+            getRandomBooks()
             return
         }
         
@@ -47,12 +48,23 @@ class BookListViewModel {
         
         let workItem = DispatchWorkItem { [weak self] in
             let configuration = VolumesFetchConfiguration(searchQuery: searchText,
-                                                          limit: 10)
+                                                          limit: 10,
+                                                          filter: self?.filter)
             self?.fetchBooks(with: configuration)
         }
         
         debounceTimer = workItem
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: workItem)
+    }
+    
+    func getRandomBooks() {
+        let configuration = VolumesFetchConfiguration(limit: 15,
+                                                      filter: filter)
+        fetchBooks(with: configuration)
+    }
+    
+    private func applyFilter() {
+        getBooks(with: lastSearchText ?? "")
     }
     
     private func fetchBooks(with configuration: VolumesFetchConfiguration) {
@@ -70,7 +82,11 @@ class BookListViewModel {
             
             switch result {
             case .success(let volumes):
-                self.books = volumes.items.compactMap { $0.volumeInfo }
+                if let items = volumes.items {
+                    self.books = items.compactMap { $0.volumeInfo }
+                } else {
+                    self.books.removeAll()
+                }
                 self.totalItems = volumes.totalItems
                 self.delegate?.didBooksUpdate()
             case .failure(let error):
@@ -78,5 +94,10 @@ class BookListViewModel {
             }
         }
     }
-    
+}
+
+extension BookListViewModel: FilterBookListDelegate {
+    func didUpdateFilter(_ filter: FilterBookList?) {
+        self.filter = filter
+    }
 }

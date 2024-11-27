@@ -9,6 +9,9 @@ import UIKit
 
 class BookListViewController: UIViewController {
     
+    var viewModel: BookListViewModel?
+    var coordinator: BookListCoordinator?
+    
     private var tableView: UITableView = {
         let tableView = UITableView()
         tableView.accessibilityIdentifier = "bookListTableView"
@@ -24,17 +27,29 @@ class BookListViewController: UIViewController {
         searchBar.placeholder = "Search for books"
         return searchBar
     }()
-    var viewModel: BookListViewModel?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        navigationItem.title = "Book Tracker"
+        setupNavigationItem()
         setupSearchBar()
         setupTableView()
-        viewModel?.getBestsellers()
+        viewModel?.getRandomBooks()
     }
-
+    
+    @objc func filterTapped() {
+        coordinator?.showFilterModal(filter: viewModel?.filter,
+                                     delegate: viewModel)
+    }
+    
+    private func setupNavigationItem() {
+        navigationItem.title = "Book Tracker"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "filterIcon"),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(filterTapped))
+    }
+    
     private func setupSearchBar() {
         view.addSubview(searchBar)
         searchBar.delegate = self

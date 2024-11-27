@@ -6,50 +6,43 @@
 //
 import Foundation
 
+struct FilterBookList: Equatable {
+    var availability: BookAvailability? = nil
+    var language: BookLanguage? = nil
+    var orderBy: BookOrderBy? = nil
+    var categories: [BookCategory]? = nil
+}
+
 struct VolumesFetchConfiguration {
-    
-    enum OrderBy: String {
-        case relevance
-        case newest
-    }
-    
-    enum Language: String {
-        case english = "en"
-        case polish = "pl"
-        case german = "de"
-    }
-    
-    enum Filter: String {
-        case ebooks = "ebooks"
-        case freeEbooks = "free-ebooks"
-        case full = "full"
-        case paidEbooks = "paid-ebooks"
-        case partial = "partial"
-        
-    }
-    
-    var searchQuery: String
-    var limit: Int?
-    var availabilityFilter: Filter?
-    var language: Language?
-    var orderBy: OrderBy?
+    var searchQuery: String = ""
+    var limit: Int? = nil
+    var filter: FilterBookList? = nil
     
     func asQueryItems() -> [URLQueryItem] {
-        var items: [URLQueryItem] = [URLQueryItem(name: "q", value: "\(searchQuery)")]
+        var items = [URLQueryItem]()
+        
+        var qValue = searchQuery.isEmpty ? "books" : searchQuery
+        
+        if let categories = filter?.categories, !categories.isEmpty {
+            let categoriesQuery = categories.map{ "subject:\($0.rawValue)" }.joined(separator: " AND ")
+            qValue += qValue.isEmpty ? categoriesQuery : " \(categoriesQuery)"
+        }
+        
+        items.append(URLQueryItem(name: "q", value: qValue))
         
         if let limit = limit {
             items.append(URLQueryItem(name: "maxResults", value: "\(limit)"))
         }
         
-        if let filter = availabilityFilter?.rawValue {
+        if let filter = filter?.availability?.rawValue {
             items.append(URLQueryItem(name: "filter", value: filter))
         }
         
-        if let language = language?.rawValue {
+        if let language = filter?.language?.rawValue {
             items.append(URLQueryItem(name: "langRestrict", value: language))
         }
         
-        if let orderBy = orderBy?.rawValue {
+        if let orderBy = filter?.orderBy?.rawValue {
             items.append(URLQueryItem(name: "orderBy", value: orderBy))
         }
         

@@ -20,10 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         setupDependencies()
-        // TODO: move to navigation
-        let initialVC = BookListViewController()
-        initialVC.viewModel = BookListViewModel(delegate: initialVC)
-        window.rootViewController = UINavigationController(rootViewController: initialVC)
+        let navController = UINavigationController()
+        let appCoordinator = AppCoordinator(navigationController: navController)
+        appCoordinator.start()
+        
+        window.rootViewController = navController
         window.makeKeyAndVisible()
         self.window = window
     }

@@ -37,8 +37,10 @@ final class GoogleBooksAPIServiceTests: XCTestCase {
             switch result {
             case .success(let volumes):
                 XCTAssertEqual(volumes.totalItems, totalItems)
-                XCTAssertEqual(volumes.items.count, 1)
-                XCTAssertEqual(volumes.items.first!.volumeInfo.title, title)
+                if let items = volumes.items {
+                    XCTAssertEqual(items.count, 1)
+                    XCTAssertEqual(items.first!.volumeInfo.title, title)
+                }
             case .failure(_):
                 XCTFail("Expected success, but got failure")
             }

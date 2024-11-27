@@ -12,7 +12,7 @@ class LocalBookServiceStub: BookService {
     func fetchVolumes(configuration: VolumesFetchConfiguration, completion: @escaping (Result<VolumesFetchResponse, any Error>) -> Void) {
         switch configuration.searchQuery {
         case "bestseller":
-            getBestsellers(completion: completion)
+            getRandomBooks(completion: completion)
         case "non existent book":
             getNonExistentBooks(completion: completion)
         case "book error":
@@ -26,8 +26,8 @@ class LocalBookServiceStub: BookService {
     
     func getImage(from imageLinks: ImageLinks, preferredSize: ImageLinks.Size, completion: @escaping (Result<UIImage, any Error>) -> Void) { }
     
-    private func getBestsellers(completion: @escaping (Result<VolumesFetchResponse, Error>) -> Void) {
-        guard let url = Bundle.main.url(forResource: "bestsellers",
+    private func getRandomBooks(completion: @escaping (Result<VolumesFetchResponse, Error>) -> Void) {
+        guard let url = Bundle.main.url(forResource: "randomBooks",
                                           withExtension: "json") else {
             completion(.failure(URLError(.fileDoesNotExist)))
             return
