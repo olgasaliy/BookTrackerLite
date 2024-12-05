@@ -6,37 +6,31 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol FilterBookListDelegate: AnyObject {
     func didUpdateFilter(_ filter: FilterBookList?)
 }
 
-class FilterBookListViewModel {
+class FilterBookListViewModel: ObservableObject {
     weak var delegate: FilterBookListDelegate?
     private(set) var filter: FilterBookList
-    
-    var selectedIndexOfOrderBy: Int {
-        set {
-            let title = getOrderByTitles()[newValue]
-            filter.orderBy = BookOrderBy.allCases.first(where: { $0.title == title })
-        }
-        get {
-            let titles = getOrderByTitles()
-            let selectedSortBy = filter.orderBy ?? .relevance
-            let index = titles.firstIndex(of: selectedSortBy.title)
-            return index ?? 0
+    @Published var selectedIndexOfOrderBy: Int {
+        didSet {
+            updateFilterWithOrderBy()
         }
     }
-    
+    //TODO: redo selectedindex logic
     init(filter: FilterBookList? = nil, delegate: FilterBookListDelegate? = nil) {
         self.filter = filter ?? FilterBookList()
         self.delegate = delegate
+        let selectedSortBy = self.filter.orderBy ?? .relevance
+        self.selectedIndexOfOrderBy = BookOrderBy.getIndex(of: selectedSortBy)
     }
     
     func getOrderByTitles() -> [String] {
         return BookOrderBy.sortedTitles
     }
-    
     
     func getAvalabilityTitles() -> [String] {
         return BookAvailability.sortedTitles
@@ -52,5 +46,9 @@ class FilterBookListViewModel {
     
     func applyFilter() {
         delegate?.didUpdateFilter(filter)
+    }
+    
+    private func updateFilterWithOrderBy() {
+        filter.orderBy = BookOrderBy.getOrder(at: selectedIndexOfOrderBy)
     }
 }

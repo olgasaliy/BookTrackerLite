@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class FilterBookListViewController: UIViewController {
 
@@ -75,19 +76,15 @@ class FilterBookListViewController: UIViewController {
             label.textColor = .black
             return label
         }()
-        let sortBySegmentedControl: UISegmentedControl = {
-            let segmentedControl = UISegmentedControl(items: viewModel.getOrderByTitles())
-            let boldFont = UIFont.systemFont(ofSize: 16, weight: .bold)
-            let regularFont = UIFont.systemFont(ofSize: 16, weight: .regular)
-            segmentedControl.setTitleTextAttributes([.font: regularFont], for: .normal)
-            segmentedControl.setTitleTextAttributes([.font: boldFont], for: .selected)
-            segmentedControl.selectedSegmentIndex = viewModel.selectedIndexOfOrderBy
-            return segmentedControl
-        }()
-        sortBySegmentedControl.addTarget(self, action: #selector(segmentChanged(_:)), for: .valueChanged)
+
+        let sortBySegmentedControl = CustomSegmentedControl(items: viewModel.getOrderByTitles(),
+                                                            selectedSegmentIndex: Binding(get: { viewModel.selectedIndexOfOrderBy },
+                                                                                          set: { viewModel.selectedIndexOfOrderBy = $0 }))
+        let hostingController = UIHostingController(rootView: sortBySegmentedControl)
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
 
         let sortByStackView: UIStackView = {
-            let stackView = UIStackView(arrangedSubviews: [sortByLabel, sortBySegmentedControl])
+            let stackView = UIStackView(arrangedSubviews: [sortByLabel, hostingController.view])
             stackView.axis = .vertical
             stackView.alignment = .center
             stackView.spacing = 10

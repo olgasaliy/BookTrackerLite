@@ -39,6 +39,5 @@ final class ImageCacheTests: XCTestCase {
         
         XCTAssertNil(result)
     }
-
-
+    
 }

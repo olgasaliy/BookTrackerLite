@@ -16,4 +16,16 @@ enum BookOrderBy: String, TitledEnum {
         case .newest: return "Newest"
         }
     }
+    
+    static var allCasesSorted: [BookOrderBy] {
+        return self.allCases.sorted { $0.title < $1.title }
+    }
+    
+    static func getIndex(of order: BookOrderBy) -> Int {
+        return allCasesSorted.firstIndex(of: order) ?? 0
+    }
+    
+    static func getOrder(at index: Int) -> BookOrderBy {
+        return allCasesSorted[safe: index] ?? .relevance
+    }
 }
